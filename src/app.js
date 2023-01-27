@@ -13,6 +13,7 @@ app.post('/user', controller.createUser);
 app.get('/user', handleTokenMiddleware, controller.findAll);
 app.get('/user/:id', handleTokenMiddleware, controller.findById);
 app.post('/categories', handleTokenMiddleware, controller.createCategory);
+app.get('/categories', handleTokenMiddleware, controller.findAllCategory);
 
 app.use(handleError);
 

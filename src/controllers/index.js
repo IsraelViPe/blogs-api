@@ -1,5 +1,5 @@
 const { createUser, authLogin, findAll, findById } = require('./user.controller');
-const { createCategory } = require('./category.controller');
+const { createCategory, findAllCategory } = require('./category.controller');
 
 module.exports = {
     authLogin,
@@ -7,4 +7,5 @@ module.exports = {
     findAll,
     findById,
     createCategory,
+    findAllCategory,
 };
