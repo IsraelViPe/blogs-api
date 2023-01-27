@@ -1,8 +1,9 @@
 const { authentication } = require('./authentication.service');
-const { createUser, findAll } = require('./user.service');
+const { createUser, findAll, findById } = require('./user.service');
 
 module.exports = {
     authentication,
     createUser,
     findAll,
+    findById,
 };

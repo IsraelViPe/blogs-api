@@ -26,8 +26,16 @@ const findAll = async (_req, res, next) => {
     }
 };
 
+const findById = async (req, res) => {
+    const { id } = req.params;
+    const response = await services.findById(id);
+
+    res.status(200).json(response);
+};
+
 module.exports = {
     createUser,
     authLogin,
     findAll,
+    findById,
 };
