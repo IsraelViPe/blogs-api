@@ -12,6 +12,7 @@ app.post('/login', controller.authLogin);
 app.post('/user', controller.createUser);
 app.get('/user', handleTokenMiddleware, controller.findAll);
 app.get('/user/:id', handleTokenMiddleware, controller.findById);
+app.post('/categories', handleTokenMiddleware, controller.createCategory);
 
 app.use(handleError);
 
