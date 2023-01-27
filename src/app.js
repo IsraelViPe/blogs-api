@@ -1,13 +1,13 @@
 const express = require('express');
-
-// ...
+const handleError = require('./middlewares/handleError');
+const controller = require('./controllers');
 
 const app = express();
 
 app.use(express.json());
 
-// ...
+app.post('/login', controller.authLogin);
 
-// É importante exportar a constante `app`,
-// para que possa ser utilizada pelo arquivo `src/server.js`
+app.use(handleError);
+
 module.exports = app;

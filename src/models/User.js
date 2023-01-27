@@ -3,6 +3,7 @@ const userModel = (Sequelize, DataTypes) => {
         id:{
             type: DataTypes.INTEGER,
             primaryKey: true,
+            autoIncrement: true,
         },
         displayName: {
             type: DataTypes.STRING,
@@ -15,7 +16,7 @@ const userModel = (Sequelize, DataTypes) => {
             type: DataTypes.STRING,
         },
         image: {
-            type: Sequelize.STRING 
+            type: DataTypes.STRING 
         },
     },{
         timestamps: false,
