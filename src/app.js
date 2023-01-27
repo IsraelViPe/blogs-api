@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json());
 
 app.post('/login', controller.authLogin);
+app.post('/user', controller.createUser);
 
 app.use(handleError);
 
