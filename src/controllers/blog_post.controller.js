@@ -12,7 +12,15 @@ const findAllPost = async (_req, res) => {
    res.status(200).json(response);
 };
 
+const findPostById = async (req, res) => {
+    const { id } = req.params;
+    const response = await service.findPostById(id);
+
+    res.status(200).json(response);
+};
+
 module.exports = {
     createPost,
     findAllPost,
+    findPostById,
 };

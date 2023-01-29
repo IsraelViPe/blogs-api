@@ -11,6 +11,15 @@ const categoriesExists = async (categoriesIds) => {
     }
 }; 
 
+const postExists = async (id) => {
+    const post = await BlogPost.findOne({ where: { id } });
+    if (!post) {
+        const error = new Error('Post does not exist');
+        error.status = 404;
+        throw error;
+    }
+};
+
 const validationInput = (inputs) => {
    const { error } = newPostValidation(inputs);
     if (error) {
@@ -61,7 +70,29 @@ const findAllPost = async () => {
     return postsList;
 };
 
+const findPostById = async (id) => {
+    await postExists(id);
+    const post = await BlogPost.findOne({
+        where: { id },
+        include: [{ model: User,
+                as: 'user',
+                attributes: { exclude: ['password'] },    
+            },
+            {
+                model: Category,
+                as: 'categories',
+                through: {
+                attributes: [],    
+                },
+            },
+        ],
+    });
+    if (!post) throw new Error('Erro inesperado. Por favor, tente mais tarde'); 
+    return post;
+};
+
 module.exports = {
     createPost,
     findAllPost,
+    findPostById,
 };

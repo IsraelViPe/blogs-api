@@ -16,7 +16,7 @@ app.post('/categories', handleTokenMiddleware, controller.createCategory);
 app.get('/categories', handleTokenMiddleware, controller.findAllCategory);
 app.post('/post', handleTokenMiddleware, controller.createPost);
 app.get('/post', handleTokenMiddleware, controller.findAllPost);
-app.get('/post/:id');
+app.get('/post/:id', handleTokenMiddleware, controller.findPostById);
 app.put('/post/:id');
 
 app.use(handleError);
