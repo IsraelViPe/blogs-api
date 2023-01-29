@@ -1,4 +1,4 @@
-const { BlogPost, sequelize, Category, PostCategory } = require('../models');
+const { BlogPost, sequelize, Category, PostCategory, User } = require('../models');
 const newPostValidation = require('./validation/newPostValidation');
 
 const categoriesExists = async (categoriesIds) => {
@@ -40,6 +40,28 @@ const createPost = async (userId, { title, content, categoryIds }) => {
     return result;    
 };
 
+const findAllPost = async () => {
+    const postsList = await BlogPost.findAll({
+        include: [
+            {
+                model: User,
+                as: 'user',
+                attributes: { exclude: ['password'] },    
+            },
+            {
+                model: Category,
+                as: 'categories',
+                through: {
+                attributes: [],    
+                },
+            },
+        ],
+    });
+    if (!postsList) throw new Error('Erro inesperado. Por favor, tente mais tarde'); 
+    return postsList;
+};
+
 module.exports = {
     createPost,
+    findAllPost,
 };

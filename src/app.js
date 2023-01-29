@@ -15,7 +15,7 @@ app.get('/user/:id', handleTokenMiddleware, controller.findById);
 app.post('/categories', handleTokenMiddleware, controller.createCategory);
 app.get('/categories', handleTokenMiddleware, controller.findAllCategory);
 app.post('/post', handleTokenMiddleware, controller.createPost);
-app.get('/post');
+app.get('/post', handleTokenMiddleware, controller.findAllPost);
 app.get('/post/:id');
 app.put('/post/:id');
 
