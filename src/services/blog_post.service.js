@@ -27,7 +27,17 @@ const validationInput = (inputs) => {
         error.message = 'Some required fields are missing';
         throw error;
     }   
-}; 
+};
+
+const isPostOwner = async (id, userId) => {
+    const post = await BlogPost.findOne({ where: { id } });
+    
+    if (userId !== post.userId) {
+        const error = new Error('Unauthorized user');
+        error.status = 401;
+        throw error;
+    }
+};
 
 const createPost = async (userId, { title, content, categoryIds }) => {
     validationInput({ title, content, categoryIds });
@@ -91,8 +101,30 @@ const findPostById = async (id) => {
     return post;
 };
 
+const updatePost = async (id, userId, { title, content }) => {
+    if (!title || !content) {
+        const error = new Error('Some required fields are missing');
+        error.status = 400;
+        throw error;
+    }
+
+    await isPostOwner(id, userId);
+
+    try {
+        await BlogPost.update(
+            { title, content },
+            { where: { id } },        
+        );
+        const updatedPost = await findPostById(id);
+        return updatedPost;
+    } catch (e) {
+        console.error(e);
+    }
+};
+
 module.exports = {
     createPost,
     findAllPost,
     findPostById,
+    updatePost,
 };
