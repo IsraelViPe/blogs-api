@@ -1,31 +1,43 @@
 const { BlogPost, sequelize, Category, PostCategory } = require('../models');
+const newPostValidation = require('./validation/newPostValidation');
 
-const createPost = async (userId, { title, content, categoryIds }) => {
-    const t = await sequelize.transaction();
-    const categoriesExists = await Category.findAll({ where: { id: categoryIds } });
+const categoriesExists = async (categoriesIds) => {
+    const categoriesFound = await Category.findAll({ where: { id: categoriesIds } });
     
-    if (categoriesExists.length !== categoryIds.length) {
-        const error = new Error('one or more \"categoryIds\" not found');
+    if (categoriesFound.length !== categoriesIds.length) {
+        const error = new Error('one or more "categoryIds" not found');
         error.status = 400;
         throw error;
-    }   
-    try {
-        const newPost = await BlogPost.create({
-            title, content, userId, published: new Date(), updated: new Date(),  
-        }, { transaction: t });
-
-        console.log(newPost);
-
-       const b = await PostCategory.bulkCreate(categoryIds
-            .map((category) => ({ postId: newPost.id, categoryId: category })),
-            { transaction: t });
-
-            console.log(categoryIds
-                .map((category) => ({ postId: newPost.id, categoryId: category })));
-            return newPost;
-    } catch (e) { 
-        console.error(e);
     }
+}; 
+
+const validationInput = (inputs) => {
+   const { error } = newPostValidation(inputs);
+    if (error) {
+        error.status = 400;
+        error.message = 'Some required fields are missing';
+        throw error;
+    }   
+}; 
+
+const createPost = async (userId, { title, content, categoryIds }) => {
+    validationInput({ title, content, categoryIds });
+   await categoriesExists(categoryIds);
+
+     const result = await sequelize.transaction(async (t) => {
+        try {
+            const newPost = await BlogPost.create({
+                title, content, userId, published: new Date(), updated: new Date(),  
+            }, { transaction: t });
+            await PostCategory.bulkCreate(categoryIds
+                .map((category) => ({ postId: newPost.id, categoryId: category })),
+                { transaction: t });
+                return newPost; 
+        } catch (e) { 
+            console.error(e);
+        }
+    });
+    return result;    
 };
 
 module.exports = {
