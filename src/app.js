@@ -18,6 +18,7 @@ app.post('/post', handleTokenMiddleware, controller.createPost);
 app.get('/post', handleTokenMiddleware, controller.findAllPost);
 app.get('/post/:id', handleTokenMiddleware, controller.findPostById);
 app.put('/post/:id', handleTokenMiddleware, controller.updatePost);
+app.delete('/post/:id', handleTokenMiddleware, controller.deletePost);
 
 app.use(handleError);
 

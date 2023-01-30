@@ -122,9 +122,21 @@ const updatePost = async (id, userId, { title, content }) => {
     }
 };
 
+const deletePost = async (userId, id) => {
+    await postExists(id);
+    await isPostOwner(id, userId);
+
+    try {
+        await BlogPost.destroy({ where: { id } });
+    } catch (e) {
+        console.error(e);
+    }
+};
+
 module.exports = {
     createPost,
     findAllPost,
     findPostById,
     updatePost,
+    deletePost,
 };
