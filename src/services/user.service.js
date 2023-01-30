@@ -33,10 +33,19 @@ const findById = async (id) => {
     throw error;
    }
    return user;
-}; 
+};
+
+const deleteUser = async (tokenUserId) => {
+    try {
+        await User.destroy({ where: { id: tokenUserId } });
+    } catch (e) {
+        console.error(e);
+    }
+};
 
 module.exports = {
     createUser,
     findAll,
     findById,
+    deleteUser,
 };

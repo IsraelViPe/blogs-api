@@ -129,7 +129,6 @@ const deletePost = async (userId, id) => {
     try {
         await BlogPost.destroy({ where: { id } });
     } catch (e) {
-        console.log('aquiiiiiii')
         console.error(e.message);
     }
 };

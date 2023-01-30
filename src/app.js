@@ -19,6 +19,7 @@ app.get('/post', handleTokenMiddleware, controller.findAllPost);
 app.get('/post/:id', handleTokenMiddleware, controller.findPostById);
 app.put('/post/:id', handleTokenMiddleware, controller.updatePost);
 app.delete('/post/:id', handleTokenMiddleware, controller.deletePost);
+app.delete('/user/me', handleTokenMiddleware, controller.deleteUser);
 
 app.use(handleError);
 
