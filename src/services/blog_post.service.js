@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { BlogPost, sequelize, Category, PostCategory, User } = require('../models');
 const newPostValidation = require('./validation/newPostValidation');
 
@@ -37,6 +38,27 @@ const isPostOwner = async (id, userId) => {
         error.status = 401;
         throw error;
     }
+};
+
+const findByQuery = async (query) => {
+     const result = await BlogPost.findAll({
+        where: {
+            [Op.or]: [
+                {
+                    title: {
+                        [Op.like]: `%${query}%`,
+                    },
+                },
+                {
+                    content: {
+                        [Op.like]: `%${query}%`,
+                    },
+                },
+            ],
+        },
+    });
+    if (!result) throw new Error('Internal server Error');
+    return result;
 };
 
 const createPost = async (userId, { title, content, categoryIds }) => {
@@ -139,4 +161,5 @@ module.exports = {
     findPostById,
     updatePost,
     deletePost,
+    findByQuery,
 };

@@ -1,5 +1,12 @@
 const service = require('../services');
 
+const findByQuery = async (req, res) => {
+    console.log(req.query.q);
+    const response = await service.findByQuery(req.query.q);
+    
+    res.status(200).json(response);
+};
+
 const createPost = async (req, res) => {
     const { id } = res.user;
     const newPost = await service.createPost(id, req.body);
@@ -13,6 +20,7 @@ const findAllPost = async (_req, res) => {
 };
 
 const findPostById = async (req, res) => {
+    console.log(req.path);
     const { id } = req.params;
     const response = await service.findPostById(id);
 
@@ -41,4 +49,5 @@ module.exports = {
     findPostById,
     updatePost,
     deletePost,
+    findByQuery,
 };
