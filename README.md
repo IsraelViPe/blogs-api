@@ -1,4 +1,65 @@
 
+# API de Blogs 
+
+Uma API e um banco de dados para a produção de conteúdo para um blog!
+
+
+## Tech Stack
+
+**Server:** Node, Express
+
+**Banco de Dados** MySql
+
+**ORM** Sequelize
+
+**Security** JWT 
+
+**Docker**
+
+
+## Installation
+
+#### Com Docker
+
+Após clonar:
+
+* configure as variáveis de ambiente usando o arquivo `.env.example` como base.
+
+* para subir os containers:` docker-compose up -d`
+
+* abra um terminal dentro do container node (`docker exec -it blogs_api bash`)
+
+* instale as dependências com `npm install`
+ 
+* rode `npm run prestart` para criar o banco de dados
+
+* rode `npm run seed` para popular o banco de dados
+
+* rode `npm start` para subir o servidor na porta 3000 do container
+
+* opcionalmente você pode rodar `npm run debug` para subir o servidor em modo desenvolvimento
+
+* para ver o retorno das rotas será necessário uma ferramenta como o [ThunderClient](https://www.thunderclient.com/) ou o [Insomnia](https://insomnia.rest/download)
+
+* se utilizar o [ThunderClient](https://www.thunderclient.com/) import a collection com todas as requisições prontas no arquivo `thunder-collection_blog-API.json` na raiz do projeto
+
+#### Sem Docker 
+
+Após clonar:
+
+* configure as variáveis de ambiente usando o arquivo .env.example como base.
+
+* instale as dependências com npm install
+
+* rode `npm run prestart` para criar o banco de dados
+
+* rode `npm run seed` para popular o banco de dados
+
+* rode `npm start` para subir o servidor na porta 3000 do container
+
+* para ver o retorno das rotas será necessário uma ferramenta como o [ThunderClient](https://www.thunderclient.com/) ou o [Insomnia](https://insomnia.rest/download)
+
+* se utilizar o [ThunderClient](https://www.thunderclient.com/) import a collection com todas as requisições prontas no arquivo `thunder-collection_blog-API.json` na raiz do projeto
 ## API Reference
 
 ### Base URI http://localhost:3000
