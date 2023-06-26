@@ -1,0 +1,287 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "blog-API",
+    "dateExported": "2023-06-26T23:19:48.010Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c4569ad3-03c6-43dc-a0b2-3b7342b3029f",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "POST (login)",
+            "url": "{{3000}}/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-01-26T22:35:15.998Z",
+            "modified": "2023-01-30T19:51:33.990Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjc0OTY4Mzg0LCJleHAiOjE2NzUwNTQ3ODR9.51SKG3qFdQKtBpz6dFz_bqFxlJNWF40Sn1zpaoQxSjQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"lewishamilton@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c96145f6-e71e-494d-b141-5b6571d6d3da",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "POST (create user)",
+            "url": "{{3000}}/user",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-01-27T02:27:08.891Z",
+            "modified": "2023-06-26T20:12:22.912Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"displayName\": \"Brett Wiltshire\",\n  \"email\": \"israel@gmail.com\",\n  \"password\": \"123456\",\n  \"image\": \"http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6dfb3cc9-5014-4e1d-b92d-76badf16a27f",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "GET(USER)",
+            "url": "{{3000}}/user",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-01-27T15:13:57.034Z",
+            "modified": "2023-06-26T20:28:20.406Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODExMjc1LCJleHAiOjE2ODc4OTc2NzV9.oe467pXX67-IbnIj8fBRkxu5mR4QF44kktyzKWT1UAQ"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "076de098-0812-494c-8fcf-d1c7c839fc4a",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "GET(USER BY ID)",
+            "url": "{{3000}}/user/1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-01-27T18:14:14.655Z",
+            "modified": "2023-06-26T20:14:08.609Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "39c60b7b-4147-49a9-b65a-68abf6baa52d",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "POST (CREATE CATEGORY)",
+            "url": "{{3000}}/categories",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-01-27T19:01:13.336Z",
+            "modified": "2023-06-26T20:14:26.868Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Technology\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "37c93b1d-b138-4394-a557-8277a9bc9545",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "GET(FIND ALL CATEGORIES)",
+            "url": "{{3000}}/categories",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-01-27T20:19:11.795Z",
+            "modified": "2023-06-26T20:14:41.174Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d732b20a-8c50-4e41-8811-b4f97d2f9425",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "POST( CREATE POST)",
+            "url": "{{3000}}/post",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-01-29T04:57:11.495Z",
+            "modified": "2023-06-26T20:14:55.352Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"The whole text for the blog post goes here in this key\",\n  \"categoryIds\": [1, 2]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8ad3795f-67cb-4748-8c22-0b0ece27f6e1",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "GET (FIND ALL POSTS)",
+            "url": "{{3000}}/post",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-01-29T17:47:58.945Z",
+            "modified": "2023-06-26T20:15:08.329Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e35c26d8-7320-44aa-b3b1-d2b3ec4a9d03",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "POST (FIND BY ID )",
+            "url": "{{3000}}/post/1",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-01-29T18:47:35.227Z",
+            "modified": "2023-06-26T20:15:22.665Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a3a0a2a1-0fa1-4b83-9bf5-ce06674e5476",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "PUT (UPDATE POST)",
+            "url": "{{3000}}/post/1",
+            "method": "PUT",
+            "sortNum": 100000,
+            "created": "2023-01-29T19:48:29.834Z",
+            "modified": "2023-01-29T20:30:05.034Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZGlzcGxheU5hbWUiOiJNaWNoYWVsIFNjaHVtYWNoZXIiLCJlbWFpbCI6Ik1pY2hhZWxTY2h1bWFjaGVyQGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9zcG9ydGJ1enoudW9sLmNvbS5ici9tZWRpYS9fdmVyc2lvbnMvZ2V0dHlpbWFnZXMtNTI0OTE1NjVfd2lkZWxnLmpwZyIsImlhdCI6MTY3NTAyNDA0MywiZXhwIjoxNjc1MTEwNDQzfQ.wXdHjFQNZb5-EeiVyVx--DpdAvsbnDfIyA2p68bQ61A"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"The whole text for the blog post goes here in this key\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "22282e7c-d455-4bb9-b62d-0f1d07f34851",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "DELETE(POST)",
+            "url": "{{3000}}/post/1",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2023-01-30T18:33:38.051Z",
+            "modified": "2023-06-26T20:15:44.584Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c0e974fc-6b4e-4b63-857a-ac1d247ea9a4",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "DELETE(ME)",
+            "url": "{{3000}}/user/me",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2023-01-30T20:19:03.052Z",
+            "modified": "2023-06-26T19:43:59.631Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODA4NjE4LCJleHAiOjE2ODc4OTUwMTh9.qk6E4uhQ7Z437zz0KH9Slq6LKvt7L1Eqj41PzAdOn7s"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "11c98afc-13a1-44e9-987b-51e9b986159b",
+            "colId": "13cc829c-0a71-4a60-a879-404fff05c948",
+            "containerId": "",
+            "name": "GET POST (BY QUERY)",
+            "url": "{{3000}}/post/search?q=Foguete não tem ré",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-01-30T20:52:32.345Z",
+            "modified": "2023-06-26T20:16:10.709Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjg3ODEwMzE1LCJleHAiOjE2ODc4OTY3MTV9.DoxTOX0D1_1k8LitIn3bovhMzi7hC6NYxxd-7vvWa5g"
+                }
+            ],
+            "params": [
+                {
+                    "name": "q",
+                    "value": "Foguete não tem ré",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
